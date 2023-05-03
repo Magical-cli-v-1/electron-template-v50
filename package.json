@@ -1,0 +1,39 @@
+{
+  "name": "electron-template",
+  "version": "1.0.0",
+  "author": "Magical",
+  "productName": "electron-template",
+  "description": "This is a electron-template",
+  "main": "app/main/index.js",
+  "scripts": {
+    "start": "electron  .",
+    "start:render": "cd app/renderer && npm start .",
+    "test": "nodemon --watch index.js --exec electron .",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "config": {
+    "forge": "./forge.config.js"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.21.4",
+    "@babel/preset-env": "^7.21.4",
+    "@babel/preset-react": "^7.18.6",
+    "@electron-forge/cli": "^6.1.1",
+    "@electron-forge/maker-deb": "^6.1.1",
+    "@electron-forge/maker-rpm": "^6.1.1",
+    "@electron-forge/maker-squirrel": "^6.1.1",
+    "@electron-forge/maker-zip": "^6.1.1",
+    "babel-loader": "^9.1.2",
+    "cross-env": "^7.0.3",
+    "electron": "^24.0.0"
+  },
+  "dependencies": {
+    "@koa/cors": "^4.0.0",
+    "electron-is-dev": "^2.0.0",
+    "electron-squirrel-startup": "^1.0.0",
+    "koa": "^2.14.2",
+    "socket.io": "^4.6.1"
+  }
+}
