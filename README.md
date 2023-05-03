@@ -2,7 +2,7 @@
 
 ### 配置
 
-* `npm install`
+* `cnpm install` ，注意，这里最好用 `cnpm`.
 
 * 在 `app/main/index.js` 文件夹找到 `http://localhost:3000/` 直接替换为你自己项目的 web页面 `URL`
   ```
