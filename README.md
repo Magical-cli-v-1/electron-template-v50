@@ -26,11 +26,11 @@
 
 ### 通信
 
-* 如果想在主线程（electron）与渲染线程（web项目）进程通信咋办？
+* 如果渲染进程（web项目）想与主进程（electron）通信咋办？
 
-* 因为这里是分别进行的打包，所以没有办法在自己的项目使用electron提供的进程通信api。
+* 因为这里是分别进行的打包，所以没有办法在自己的项目使用electron提供的进程通信`ipcAPI`。
 
-* 这里我们可以利用 `socket.io` 建立 `websocket` 连接,实现通信.
+* 这里我们可以利用 `socket.io` 建立 `websocket` 连接,实现进程间通信.
 
 * 此模板已经使用koa搭建了后台服务器，并发起了 socket.io 连接,详见`app/main/server.js`.
 
