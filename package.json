@@ -1,39 +1,50 @@
 {
-  "name": "electron-template",
+  "name": "electron",
   "version": "1.0.0",
-  "author": "Magical",
-  "productName": "electron-template",
-  "description": "This is a electron-template",
-  "main": "app/main/index.js",
+  "description": "this is electron template",
+  "homepage": "./",
+  "main": "src/main/index.js",
   "scripts": {
-    "start": "electron  .",
-    "start:render": "cd app/renderer && npm start .",
-    "test": "nodemon --watch index.js --exec electron .",
-    "package": "electron-forge package",
-    "make": "electron-forge make"
+    "ele": "nodemon --watch main.js --exec \"electron .\"",
+    "start": "cd src/renderer && cross-env BROWSER=none npm run start",
+    "dev": "concurrently \"wait-on http://localhost:3000 && electron .\" \"cd src/renderer && cross-env BROWSER=none npm run start \"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
-  "config": {
-    "forge": "./forge.config.js"
+  "author": {
+   "name": "MagicalBoy",
+   "email": "2591754854@qq.com"
   },
+  "repository": "https://github.com/Magical-cli-v-1/electron-template-v50",
   "license": "ISC",
-  "devDependencies": {
-    "@babel/core": "^7.21.4",
-    "@babel/preset-env": "^7.21.4",
-    "@babel/preset-react": "^7.18.6",
-    "@electron-forge/cli": "^6.1.1",
-    "@electron-forge/maker-deb": "^6.1.1",
-    "@electron-forge/maker-rpm": "^6.1.1",
-    "@electron-forge/maker-squirrel": "^6.1.1",
-    "@electron-forge/maker-zip": "^6.1.1",
-    "babel-loader": "^9.1.2",
-    "cross-env": "^7.0.3",
-    "electron": "^24.0.0"
-  },
   "dependencies": {
-    "@koa/cors": "^4.0.0",
     "electron-is-dev": "^2.0.0",
-    "electron-squirrel-startup": "^1.0.0",
-    "koa": "^2.14.2",
-    "socket.io": "^4.6.1"
+    "nodemon": "^2.0.22"
+  },
+  "build":{
+    "appId":"electron-tsx",
+    "productName":"electron-tsx",
+    "copyright":"Copyright © 2023 ${author}",
+    "files":[
+      "./src/renderer/node_modules/**/*",
+      "./src/renderer/package.json",
+      "./src/renderer/build/**/*",
+      "./src/main/index.js",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "extends":null,
+    "win":{
+      "icon":"resources/icon.ico"
+    }
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "cross-env": "^7.0.3",
+    "devtron": "^1.4.0",
+    "electron": "^25.2.0",
+    "electron-builder": "^24.4.0",
+    "wait-on": "^7.0.1"
   }
 }
