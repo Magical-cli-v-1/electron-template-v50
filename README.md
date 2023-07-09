@@ -14,13 +14,17 @@
 
     // TODO: 需要嵌入的web页面的 URL
     win.loadURL('http://localhost:3000/')
-
   }
   ```
 
 ### 启动
 
 * `npm run dev`
+
+### 调试
+
+* `Shift + Ctrl + i`
+
 
 ### 打包
 
